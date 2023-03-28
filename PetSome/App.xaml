@@ -1,0 +1,13 @@
+﻿<Application x:Class="PetSome.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PetSome"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="Cosik" Color="Black"/>
+            <SolidColorBrush x:Key="BackgroundColor" Color="#F5DEB3"/>
+            <SolidColorBrush x:Key="ListColor" Color="#F2C94C"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

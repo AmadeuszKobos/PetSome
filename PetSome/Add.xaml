@@ -1,0 +1,73 @@
+﻿<Window x:Class="PetSome.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetSome"
+        mc:Ignorable="d"
+        Title="Informacje o zwierzęciu" Height="300" Width="560" ResizeMode="NoResize" Background="#F5DEB3">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="#755a39"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="#c4af86"/>
+            <Setter Property="Foreground" Value="#755a39"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="#b39660"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MaxHeight" Value="200"/>
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="MaxWidth" Value="200"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MaxWidth="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Kogo my tu mamy!?😲" FontSize="50" Background="#664d1f" Foreground="#b39660" Grid.ColumnSpan="2" Padding="10" FontWeight="Bold"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Zwierzę:" />
+            <!--<TextBox Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />-->
+            <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FFC4AF86" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem>Pies</ComboBoxItem>
+                <ComboBoxItem>Kot</ComboBoxItem>
+                <ComboBoxItem>Królik</ComboBoxItem>
+                <ComboBoxItem>Ptak</ComboBoxItem>
+                <ComboBoxItem>Rybka</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Imię zwierzęcia:" />
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+
+
+            <Button Grid.Row="10" Grid.Column="1" Content="Dodaj zwierzaka"/>
+        </Grid>
+</Window>
