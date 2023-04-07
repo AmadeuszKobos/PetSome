@@ -50,24 +50,24 @@
 
             <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Zwierzę:" />
             <!--<TextBox Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />-->
-            <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
+        <ComboBox x:Name="typeField" Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
                         <GradientStop Color="#FFC4AF86" Offset="1"/>
                     </LinearGradientBrush>
                 </ComboBox.Background>
-                <ComboBoxItem>Pies</ComboBoxItem>
-                <ComboBoxItem>Kot</ComboBoxItem>
-                <ComboBoxItem>Królik</ComboBoxItem>
-                <ComboBoxItem>Ptak</ComboBoxItem>
-                <ComboBoxItem>Rybka</ComboBoxItem>
+            <ComboBoxItem Content="Pies"></ComboBoxItem>
+            <ComboBoxItem Content="Kot"></ComboBoxItem>
+            <ComboBoxItem Content="Królik"></ComboBoxItem>
+            <ComboBoxItem Content="Ryba"></ComboBoxItem>
+            <ComboBoxItem Content="Ptak"></ComboBoxItem>
             </ComboBox>
 
             <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Imię zwierzęcia:" />
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+            <TextBox x:Name="nameField" Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
 
 
-            <Button Grid.Row="10" Grid.Column="1" Content="Dodaj zwierzaka"/>
-        </Grid>
+        <Button Grid.Row="10" Grid.Column="1" Content="Dodaj zwierzaka" IsEnabled="True" Click="AddNewPet"/>
+    </Grid>
 </Window>

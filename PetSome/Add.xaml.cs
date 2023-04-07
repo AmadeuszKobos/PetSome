@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
+using System.Data.SQLite;
+using System.Drawing;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PetSome
 {
@@ -23,5 +19,44 @@ namespace PetSome
         {
             InitializeComponent();
         }
+
+        public void AddNewPet(object sender, RoutedEventArgs e)
+        {
+            string newPetName = nameField.Text;
+            ComboBoxItem typeItem = (ComboBoxItem)typeField.SelectedItem;   
+            string newPetType = typeItem.Content.ToString();
+            if (nameField.Text == "")
+            {
+                nameField.Text = newPetName.ToString();
+                nameField.BorderBrush = new SolidColorBrush(Colors.Red);
+                Console.WriteLine(newPetName);
+            }
+            else
+            {
+                Database dbObject = new Database();
+
+                string query = "INSERT INTO 'PetLibrary' ('Type','Name') VALUES (@type, @name)";
+                SQLiteCommand myInsert = new SQLiteCommand(query, dbObject.conn);
+
+                dbObject.OpenConnection();
+
+                myInsert.Parameters.AddWithValue("@type", newPetType);
+                myInsert.Parameters.AddWithValue("@name", newPetName);
+
+                var insertResult = myInsert.ExecuteNonQuery();
+
+                dbObject.CloseConnection();
+            }
+
+
+
+
+
+        }
     }
+
+
+
+
+
 }

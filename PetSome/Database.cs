@@ -1,24 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
 using System.IO;
-using System.Globalization;
-using System.Windows.Data;
 
-namespace PetSome
+namespace SQLite2
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-    }
-
     internal class Database
     {
         public SQLiteConnection conn; //connection to database
@@ -29,7 +15,7 @@ namespace PetSome
 
             if (!File.Exists("./petSomeDB.sqlite3"))
             {
-                SQLiteConnection.CreateFile("petSomeDB.sqlite3");
+                SQLiteConnection.CreateFile("petSomeDB.sqlite3"); //if file named database.sqlite3 doesn't exist, we create one
             }
         }
 
@@ -48,7 +34,6 @@ namespace PetSome
                 conn.Close();
             }
         }
+
     }
-
-
 }
