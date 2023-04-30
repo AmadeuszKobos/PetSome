@@ -2,31 +2,15 @@
         x:Name="Informacje"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Informacje o zwierzęciu" Height="640" Width="520" Background="#F5DEB3">
+        Title="Informacje o zwierzęciu" 
+        Style="{DynamicResource InfoWindowStyle}">
+
     <Window.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="#c4af86"/>
-            <Setter Property="Text" Value="Nie ustawiono"/>
-            <Setter Property="Foreground" Value="#755a39"/>
-        </Style>
-        <Style TargetType="RichTextBox">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="#c4af86"/>
-        </Style>
-        <Style TargetType="DatePicker">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="#c4af86"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="#b39660"/>
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="MaxHeight" Value="200"/>
-            <Setter Property="MinWidth" Value="20"/>
-            <Setter Property="MaxWidth" Value="200"/>
-            <Setter Property="Margin" Value="10"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/Info.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
 
     <ScrollViewer>
@@ -50,50 +34,55 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="🐠NEMO" FontSize="50" Background="#b39660" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="0" Text="" FontSize="50" Margin="0" Background="#b39660" Grid.ColumnSpan="2" 
+        MouseDown="Move_Object"/>
             <Button Grid.Row="11" Grid.Column="0" Content="Drukuj info" Background="#755a39" Click="Button_Click"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Zwierzę:" />
-            <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
+            <ComboBox Name="PetType" Grid.Row="1" Grid.Column="1" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
                         <GradientStop Color="#FFC4AF86" Offset="1"/>
                     </LinearGradientBrush>
                 </ComboBox.Background>
-                <ComboBoxItem>Pies</ComboBoxItem>
-                <ComboBoxItem>Kot</ComboBoxItem>
-                <ComboBoxItem>Królik</ComboBoxItem>
-                <ComboBoxItem>Ptak</ComboBoxItem>
-                <ComboBoxItem>Rybka</ComboBoxItem>
+                <ComboBoxItem Content="Pies"></ComboBoxItem>
+                <ComboBoxItem Content="Kot"></ComboBoxItem>
+                <ComboBoxItem Content="Królik"></ComboBoxItem>
+                <ComboBoxItem Content="Ptak"></ComboBoxItem>
+                <ComboBoxItem Content="Ryba"></ComboBoxItem>
             </ComboBox>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Imię zwierzęcia:" />
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Imię zwierzęcia:" />
+        <TextBox Name="PetName" Grid.Row="2" Grid.Column="1"/>
 
-        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Rasa:" />
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Rasa:" />
+        <TextBox Name="PetRace" Grid.Row="3" Grid.Column="1"/>
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Preferowana karma:" />
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Preferowana karma:" />
+        <TextBox Name="PetFood" Grid.Row="4" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
 
-        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" MaxWidth="200" Text="Ostatnia wizyta u weterynarza:" />
-        <DatePicker Grid.Row="5" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" MaxWidth="200" Text="Ostatnia wizyta u weterynarza:" />
+        <DatePicker Name="PetVetVisit" Grid.Row="5" Grid.Column="1"/>
         
-        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" MaxWidth="200" Text="Data urodzenia: " />
-        <DatePicker Grid.Row="6" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" MaxWidth="200" Text="Data urodzenia: " />
+        <DatePicker Name="PetBirthday" Grid.Row="6" Grid.Column="1"/>
 
-        <TextBlock Grid.Row="7" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Wzrost: " />
-        <TextBox Grid.Row="7" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Wzrost: " />
+        <TextBox Name="PetHeight" Grid.Row="7" Grid.Column="1"/>
         
-        <TextBlock Grid.Row="8" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Waga: " />
-        <TextBox Grid.Row="8" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="Waga: " />
+        <TextBox Name="PetWeight" Grid.Row="8" Grid.Column="1"/>
         
-        <TextBlock Grid.Row="9" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Informacje dodatkowe: " />
-        <RichTextBox Grid.Row="9" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
+        <TextBlock Grid.Row="9" Grid.Column="0" Text="Informacje dodatkowe: " />
+        <RichTextBox Name="PetMore" Grid.Row="9" Grid.Column="1"/>
         
         <Button Grid.Row="10" Grid.Column="0" Content="Galeria"/>
-        <Button Grid.Row="10" Grid.Column="1" Content="Zapisz zmiany"/>
+        <Button Grid.Row="10" Grid.Column="1" Content="Zapisz zmiany" Click="Save_Click"/>
+        <Button Grid.Row="11" Grid.Column="1" Content="USUŃ" Background="DarkRed" Foreground="White" Margin="219,32,10,0" Click="Delete_Click"/>
+            <Button Grid.Column="1"  Width="50" Height="50" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Home_Button" Background="#b39660" BorderBrush="#b39660">
+            <Label Content="&#xf00d;" FontFamily="Resources/#Font Awesome 6 Free Solid" FontSize="40" Foreground="#8B5A2B" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
         </Grid>
     </ScrollViewer>
 </Window>

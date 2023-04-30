@@ -3,6 +3,7 @@ using System;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -46,6 +47,18 @@ namespace PetSome
                 var insertResult = myInsert.ExecuteNonQuery();
 
                 dbObject.CloseConnection();
+
+                Window window = Application.Current.MainWindow.FindName("MenuWindow") as Window;
+                if (window != null)
+                {
+                    ListBox listBox = (ListBox)window.FindName("PetsList");
+                    listBox.Items.Insert(0, newPetName);
+                }
+
+                MainWindow menu = new MainWindow();
+                menu.Show();
+                this.Close();
+
             }
 
 

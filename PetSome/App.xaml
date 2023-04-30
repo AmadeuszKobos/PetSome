@@ -8,6 +8,19 @@
             <SolidColorBrush x:Key="Cosik" Color="Black"/>
             <SolidColorBrush x:Key="BackgroundColor" Color="#F5DEB3"/>
             <SolidColorBrush x:Key="ListColor" Color="#F2C94C"/>
+
+            <Style TargetType="Window">
+                <Setter Property="WindowStyle" Value="None"/>
+            </Style>
+
+            <!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/Menu.xaml" />
+                <ResourceDictionary Source="Theme/Info.xaml"/>
+            </ResourceDictionary.MergedDictionaries>-->
+
         </ResourceDictionary>
     </Application.Resources>
+    
+    
+    
 </Application>

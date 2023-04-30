@@ -48,8 +48,7 @@
 
         <TextBlock Grid.Row="0" Text="Kogo my tu mamy!?😲" FontSize="50" Background="#664d1f" Foreground="#b39660" Grid.ColumnSpan="2" Padding="10" FontWeight="Bold"/>
 
-            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Zwierzę:" />
-            <!--<TextBox Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />-->
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Zwierzę:" />
         <ComboBox x:Name="typeField" Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
