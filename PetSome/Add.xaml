@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetSome"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStyle="None"
         Title="Informacje o zwierzęciu" Height="300" Width="560" ResizeMode="NoResize" Background="#F5DEB3">
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -37,16 +37,11 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Kogo my tu mamy!?😲" FontSize="50" Background="#664d1f" Foreground="#b39660" Grid.ColumnSpan="2" Padding="10" FontWeight="Bold"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Kogo my tu mamy!?😲" FontSize="50" Background="#664d1f" Foreground="#b39660" Grid.ColumnSpan="2" Padding="10" FontWeight="Bold" MouseDown="TextBlock_MouseDown"/>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" FontSize="18" FontWeight="Bold" Text="Zwierzę:" />
         <ComboBox x:Name="typeField" Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="120" Height="25" BorderBrush="#FFC4AF86" FontSize="16" FontFamily="Segoe UI">
@@ -67,6 +62,10 @@
             <TextBox x:Name="nameField" Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" FontSize="18" />
 
 
-        <Button Grid.Row="10" Grid.Column="1" Content="Dodaj zwierzaka" IsEnabled="True" Click="AddNewPet"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Add new pet" FontFamily="Resources/#Font Awesome 6 Free Solid" IsEnabled="True" FontSize="30" Foreground="#8B5A2B" Background="#F5DEB3" BorderBrush="#F5DEB3" Click="AddNewPet"/>
+
+        <Button Grid.Column="0" Grid.Row="3"  Width="120" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,10,0" Click="Home_Button" Background="#F5DEB3" BorderBrush="#F5DEB3">
+            <Label Content="&#xf00d;" FontFamily="Resources/#Font Awesome 6 Free Solid" FontSize="40" Foreground="#8B5A2B" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
     </Grid>
 </Window>

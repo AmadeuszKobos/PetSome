@@ -13,10 +13,7 @@
                 <Setter Property="WindowStyle" Value="None"/>
             </Style>
 
-            <!--<ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/Menu.xaml" />
-                <ResourceDictionary Source="Theme/Info.xaml"/>
-            </ResourceDictionary.MergedDictionaries>-->
+           
 
         </ResourceDictionary>
     </Application.Resources>

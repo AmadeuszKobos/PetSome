@@ -73,13 +73,14 @@ namespace PetSome
         {
             string name = (sender as ListBoxItem).Tag.ToString();
             Info info = new Info(name);
+            (sender as ListBoxItem).IsEnabled = false;
             info.Show();
             
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            Window1 newWindow = new Window1();
+            Calendar newWindow = new Calendar();
             newWindow.Show();
         }
 
@@ -138,7 +139,15 @@ namespace PetSome
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            this.InvalidateVisual();
+            this.Close();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
     }
 }

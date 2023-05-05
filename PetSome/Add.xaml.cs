@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Globalization;
@@ -26,6 +25,8 @@ namespace PetSome
             string newPetName = nameField.Text;
             ComboBoxItem typeItem = (ComboBoxItem)typeField.SelectedItem;   
             string newPetType = typeItem.Content.ToString();
+
+
             if (nameField.Text == "")
             {
                 nameField.Text = newPetName.ToString();
@@ -48,23 +49,22 @@ namespace PetSome
 
                 dbObject.CloseConnection();
 
-                Window window = Application.Current.MainWindow.FindName("MenuWindow") as Window;
-                if (window != null)
-                {
-                    ListBox listBox = (ListBox)window.FindName("PetsList");
-                    listBox.Items.Insert(0, newPetName);
-                }
-
                 MainWindow menu = new MainWindow();
                 menu.Show();
                 this.Close();
-
             }
+        }
 
+        private void Home_Button(object sender, RoutedEventArgs e)
+        {
+            MainWindow menu = new MainWindow();
+            menu.Show();
+            this.Close();
+        }
 
-
-
-
+        private void TextBlock_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 

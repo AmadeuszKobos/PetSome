@@ -9,6 +9,9 @@ using System.Windows;
 using System.IO;
 using System.Globalization;
 using System.Windows.Data;
+using System.ComponentModel;
+using System.Windows.Controls;
+using PetSome.Properties;
 
 namespace PetSome
 {
@@ -18,6 +21,7 @@ namespace PetSome
     public partial class App : Application
     {
     }
+
 
     internal class Database
     {

@@ -34,7 +34,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="" FontSize="50" Margin="0" Background="#b39660" Grid.ColumnSpan="2" 
+        <TextBlock x:Name="PetPet" Grid.Row="0" Text="" FontSize="50" Margin="0" Background="#b39660" Grid.ColumnSpan="2" 
         MouseDown="Move_Object"/>
             <Button Grid.Row="11" Grid.Column="0" Content="Drukuj info" Background="#755a39" Click="Button_Click"/>
 
@@ -77,10 +77,10 @@
         <TextBlock Grid.Row="9" Grid.Column="0" Text="Informacje dodatkowe: " />
         <RichTextBox Name="PetMore" Grid.Row="9" Grid.Column="1"/>
         
-        <Button Grid.Row="10" Grid.Column="0" Content="Galeria"/>
+        <Button Grid.Row="10" Grid.Column="0" Content="Galeria" Click="Gallery_Click"/>
         <Button Grid.Row="10" Grid.Column="1" Content="Zapisz zmiany" Click="Save_Click"/>
         <Button Grid.Row="11" Grid.Column="1" Content="USUŃ" Background="DarkRed" Foreground="White" Margin="219,32,10,0" Click="Delete_Click"/>
-            <Button Grid.Column="1"  Width="50" Height="50" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Home_Button" Background="#b39660" BorderBrush="#b39660">
+        <Button Grid.Column="1"  Width="50" Height="50" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Home_Button" Background="#b39660" BorderBrush="#b39660">
             <Label Content="&#xf00d;" FontFamily="Resources/#Font Awesome 6 Free Solid" FontSize="40" Foreground="#8B5A2B" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Button>
         </Grid>
